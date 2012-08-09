@@ -24,7 +24,7 @@ $vk_config = array(
 );
 
 try {
-    $vk = new \VK\VK($vk_config['app_id'], $vk_config['api_secret'],
+    $vk = new VK($vk_config['app_id'], $vk_config['api_secret'],
         $vk_config['access_token']);
 
     $user_friends = $vk->api('friends.get', array(
@@ -38,7 +38,7 @@ try {
             . $value['uid'] . ')<br>';
     }
 
-} catch (\VK\VKException $error) {
+} catch (VKException $error) {
     echo $error->getMessage();
 }
 

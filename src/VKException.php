@@ -1,10 +1,9 @@
 <?php
-namespace VK;
 
 /**
  *
  */
-class VKException
+class VKException extends Exception
 {
 
 }

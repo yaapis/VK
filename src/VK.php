@@ -1,5 +1,4 @@
 <?php
-namespace VK;
 
 /**
  * The PHP class for vk.com API and to support OAuth.

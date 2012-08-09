@@ -24,7 +24,7 @@ $vk_config = array(
 );
 
 try {
-    $vk = new \VK\VK($vk_config['app_id'], $vk_config['api_secret']);
+    $vk = new VK($vk_config['app_id'], $vk_config['api_secret']);
     $users = $vk->api('users.get', array('uids' => '12345,54321',
         'fields' => 'first_name,last_name,nickname'));
 
@@ -34,6 +34,6 @@ try {
             . '» ' . $user['last_name'] . '<br>';
     }
 
-} catch (\VK\VKException $error) {
+} catch (VKException $error) {
     echo $error->getMessage();
 }
