@@ -16,6 +16,6 @@
 
     },
     "autoload": {
-        "psr-0": { "vk": "src/" }
+        "psr-0": { "VK": "src/" }
     }
 }
