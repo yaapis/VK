@@ -80,9 +80,9 @@ class VK
         return 'https://oauth.vk.com/access_token';
     }
 
-    public function getAPI_URL()
+    public function getAPI_URL($method = '')
     {
-        return 'http://api.vk.com/api.php';
+        return 'https://api.vk.com/method/' . $method;
     }
 
     /**
@@ -142,7 +142,7 @@ class VK
         $sig .= $this->apiSecret;
 
         $parameters['sig'] = md5($sig);
-        $query = $this->createURL($parameters, $this->getAPI_URL());
+        $query = $this->createURL($parameters, $this->getAPI_URL($method));
 
         return json_decode(file_get_contents($query), true);
     }
