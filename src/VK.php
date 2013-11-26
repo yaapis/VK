@@ -176,9 +176,9 @@ class VK
      */
     public function getAccessToken($code, $callback_url = 'http://oauth.vk.com/blank.html')
     {
-        if (!is_null($this->accessToken) && $this->auth) {
-            throw new VKException('Already authorized.');
-        }
+//        if (!is_null($this->accessToken) && $this->auth) {
+//            throw new VKException('Already authorized.');
+//        }
 
         $parameters = array(
             'client_id' => $this->appId,
