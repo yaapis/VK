@@ -174,7 +174,7 @@ class VK
      *      'expires_in'    => '86399', // time life token in seconds
      *      'user_id'       => '12345')
      */
-    public function getAccessToken($code)
+    public function getAccessToken($code, $callback_url = 'http://oauth.vk.com/blank.html')
     {
         if (!is_null($this->accessToken) && $this->auth) {
             throw new VKException('Already authorized.');
@@ -183,7 +183,8 @@ class VK
         $parameters = array(
             'client_id' => $this->appId,
             'client_secret' => $this->apiSecret,
-            'code' => $code
+            'code' => $code,
+            'redirect_uri' => $callback_url
         );
 
         $url = $this->createURL($parameters, $this->baseAccessTokenURL());
